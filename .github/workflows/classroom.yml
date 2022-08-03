@@ -1,0 +1,48 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-version: [3.9]
+    runs-on: ubuntu-latest
+    
+    name: Github Classroom
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          
+      - name: Install Dependencies
+        run: | 
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          python -m pip install pytest
+      
+      - name: Autograde
+        uses: education/autograding@v1
+      
+      - name: Generate coverage reports
+        run: |
+          python -m pip install pytest-cov coverage-lcov
+          python -m pytest --cov=. --cov-report=xml
+          coverage-lcov --output_file_path coverage.lcov
+          
+      - name: Check minimum coverage
+        uses: devmasx/coverage-check-action@v1.2.0
+        with:
+          type: lcov
+          result_path: coverage.lcov
+          min_coverage: 100
+          token: ${{ github.token }}
