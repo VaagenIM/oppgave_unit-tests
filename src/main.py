@@ -84,3 +84,5 @@ if __name__ == '__main__':  # pragma: no cover
         elif command.lower() == 'q':
             print('Ha en fin dag!')
             break
+        else:
+            print('Ugyldig kommando')
