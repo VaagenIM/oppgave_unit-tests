@@ -2,10 +2,10 @@
   "tests": [
     {
       "name": "Autograde",
-      "setup": "sudo -H pip3 install pytest",
-      "run": "pytest",
+      "setup": "sudo -H pip3 install pytest pytest-cov",
+      "run": "./.github/classroom/cov.py",
       "input": "",
-      "output": "",
+      "output": "PASS",
       "comparison": "included",
       "timeout": 10,
       "points": 100
