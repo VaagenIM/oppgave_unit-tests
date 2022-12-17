@@ -1,5 +1,5 @@
-# Unit testing!
-I denne oppgaven skal du skrive unittests for å avdekke og korrigere feil i funksjoner som du finner i `src/main.py`.
+# Unit testing og kodefiksing!
+I denne oppgaven skal du skrive unittests for å avdekke og korrigere feil i funksjoner som du finner i `src/main.py`. Det vil være lurt å kjøre gjennom koden for å se hva den gjør som den er.
 
 En unittest er en metode for å teste om en funksjon oppfører seg som den skal. I motsetning til brukertesting, krever en unittest ingen menneskelig input. La maskinen gjøre jobben for deg!
 
