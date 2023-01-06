@@ -1,13 +1,13 @@
-import os
-import sys
 import pytest
 import coverage
+from pathlib import Path
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
-pytest.main(['--cov-report', 'term', '--cov=src'])
+root = Path(__file__).parents[2]
+pytest.main([f'{root}', f'--cov={root}', '--cov-report', 'xml'])
+
 cov = coverage.Coverage()
 cov.load()
 
 print(f'FAIL: Coverage below 100%, write more unit tests!'
-      if cov.report(show_missing=False) < 100
+      if cov.report(show_missing=False, omit='*/tests/test_*') < 100
       else f'PASS: Coverage 100%')

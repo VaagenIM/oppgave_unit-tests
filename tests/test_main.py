@@ -17,10 +17,7 @@ For å opprette en test:
 - Lag en ny funksjon som starter med "test_"
 - Skriv en assert som sjekker at koden din fungerer som den skal (f.eks. assert multiply_numbers(2, 3) == 6)
 """
-
-# Sett opp testmiljøet
-import os, sys, pytest
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+import pytest
 from main import *
 
 
