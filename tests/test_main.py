@@ -17,9 +17,9 @@ For å opprette en test:
 - Lag en ny funksjon som starter med "test_"
 - Skriv en assert som sjekker at koden din fungerer som den skal (f.eks. assert multiply_numbers(2, 3) == 6)
 """
-import sys, pytest
+import os, sys, pytest
 
-sys.path.append('..')
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from main import *
 
 
@@ -41,15 +41,11 @@ def test_multiply_numbers():
 
 def test_purchase():
     # Her må du skrive egne tester!
-    wallet = 100
-    price = 50
     assert 100 - 50 == 50
 
 
 def test_sell():
     # Her må du skrive egne tester!
-    wallet = 100
-    price = 50
     assert 100 + 50 == 150
 
 
