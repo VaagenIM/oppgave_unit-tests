@@ -17,7 +17,9 @@ For å opprette en test:
 - Lag en ny funksjon som starter med "test_"
 - Skriv en assert som sjekker at koden din fungerer som den skal (f.eks. assert multiply_numbers(2, 3) == 6)
 """
-import pytest
+import sys, pytest
+
+sys.path.append('..')
 from main import *
 
 
@@ -34,21 +36,21 @@ def test_sum_3_nums():
 
 def test_multiply_numbers():
     # Her må du skrive egne tester!
-    assert 2*2 == 4
+    assert 2 * 2 == 4
 
 
 def test_purchase():
     # Her må du skrive egne tester!
     wallet = 100
     price = 50
-    assert 100-50 == 50
+    assert 100 - 50 == 50
 
 
 def test_sell():
     # Her må du skrive egne tester!
     wallet = 100
     price = 50
-    assert 100+50 == 150
+    assert 100 + 50 == 150
 
 
 # Avansert testing med Exception handling
