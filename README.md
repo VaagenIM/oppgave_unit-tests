@@ -11,7 +11,7 @@ Merk at du skal kun teste funksjonene `multiply_numbers`, `sum_3_nums`, `purchas
 3. Skriv tester der du sammenligner resultatet av funksjonen med det du forventer at den skal returnere. 
 4. Du kan bruke `assert` for å sammenligne to verdier. Noen tester ligger der allerede.
 
-Du må ha testet alle funksjonene i `main.py` for at oppgaven skal bli godkjent. Dette kalles for 100% code coverage (Minst èn test for alle funksjoner). Du kan se hvor mye code coverage du har ved å høyreklikke `tests`-mappen og velge More Run/Debug` og velge `Run ... with Coverage`. (Eller ved at GitHub godkjenner oppgaven din.)
+Du må ha testet alle funksjonene i `main.py` for at oppgaven skal bli godkjent. Dette kalles for 100% code coverage (Minst èn test for alle funksjoner). Du kan se hvor mye code coverage du har ved å høyreklikke `tests`-mappen, hvor du navigerer til `More Run/Debug` og velger `Run ... with Coverage`. (Eller via å la GitHub godkjenne oppgaven/teste din.)
 
 ### Eksempel på en test
 ```python
